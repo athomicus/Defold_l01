@@ -124,6 +124,7 @@ function handle_level_collisions(self, normal, distance)
 		self.velocity.y = 0
 	end
 	--_
+	--
 end
 
 function on_message(self, message_id, message, sender)
