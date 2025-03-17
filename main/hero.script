@@ -90,12 +90,8 @@ function fixed_update(self, dt)
 	self.correction.y= 0
 end
 
-
-function handle_level_collisions(self, normal, distance)
-
+function compensation_player_collision(self,normal,distance)
 	-- normal distance compensation
-	--distance = distance * vmath.length(normal) 
-	
 	if distance > 0 then 
 		--project acumulated correction onto collision penetration vector
 		local projection  = vmath.project(self.correction, distance * normal)
@@ -105,8 +101,11 @@ function handle_level_collisions(self, normal, distance)
 			self.correction = self.correction  + compensation
 		end
 	end
+end
 
+function handle_level_collisions(self, normal, distance)
 
+	compensation_player_collision(self,normal,distance)
 
 	--wall on left or right
 	if math.abs(normal.x) > 0 then
@@ -124,7 +123,7 @@ function handle_level_collisions(self, normal, distance)
 		self.velocity.y = 0
 	end
 	--_
-	--
+	
 end
 
 function on_message(self, message_id, message, sender)
