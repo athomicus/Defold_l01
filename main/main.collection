@@ -11,7 +11,16 @@ embedded_instances {
   "  component: \"/Assets/dust.particlefx\"\n"
   "  position {\n"
   "    y: -170.0\n"
+  "    z: -0.5\n"
   "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"jump-sound\"\n"
+  "  component: \"/Assets/jump-sound.sound\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"fall\"\n"
+  "  component: \"/Assets/fall.sound\"\n"
   "}\n"
   "embedded_components {\n"
   "  id: \"sprite_hero\"\n"
@@ -55,7 +64,7 @@ embedded_instances {
   position {
     x: 151.0
     y: 259.0
-    z: 1.0
+    z: 0.2
   }
 }
 embedded_instances {

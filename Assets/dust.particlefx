@@ -2,6 +2,10 @@ emitters {
   mode: PLAY_MODE_ONCE
   duration: 0.1
   space: EMISSION_SPACE_WORLD
+  rotation {
+    z: 0.29283074
+    w: 0.9561643
+  }
   tile_source: "/builtins/graphics/particle_blob.tilesource"
   animation: "anim"
   material: "/builtins/materials/particlefx.material"
@@ -35,14 +39,16 @@ emitters {
   properties {
     key: EMITTER_KEY_PARTICLE_LIFE_TIME
     points {
-      y: 2.5
+      y: 1.0
     }
+    spread: 0.4
   }
   properties {
     key: EMITTER_KEY_PARTICLE_SPEED
     points {
-      y: 100.0
+      y: 166.0
     }
+    spread: 20.0
   }
   properties {
     key: EMITTER_KEY_PARTICLE_SIZE
@@ -96,7 +102,19 @@ emitters {
   particle_properties {
     key: PARTICLE_KEY_BLUE
     points {
-      y: 1.0
+      y: 2.880978
+    }
+    points {
+      x: 0.875238
+      y: 1.168064
+      t_x: 0.623769
+      t_y: -0.781609
+    }
+    points {
+      x: 1.0
+      y: -0.012834
+      t_x: 0.08605591
+      t_y: -0.9962903
     }
   }
   particle_properties {
@@ -107,28 +125,44 @@ emitters {
       t_y: 0.99740857
     }
     points {
-      x: 0.11320755
-      y: 0.99277455
-      t_x: 0.99418455
-      t_y: 0.10768964
-    }
-    points {
-      x: 0.7112546
-      y: 0.555656
-      t_x: 0.5694311
-      t_y: -0.82203907
+      x: 0.448571
+      y: 2.248931
+      t_x: 0.996936
+      t_y: -0.078215
     }
     points {
       x: 1.0
-      y: 0.0072254334
-      t_x: 0.4737472
-      t_y: -0.8806609
+      y: 0.237225
+      t_x: 0.13151109
+      t_y: -0.9913147
     }
   }
   particle_properties {
     key: PARTICLE_KEY_ANGULAR_VELOCITY
     points {
       y: 1.0
+    }
+  }
+  modifiers {
+    type: MODIFIER_TYPE_DRAG
+    properties {
+      key: MODIFIER_KEY_MAGNITUDE
+      points {
+        y: 1.0
+      }
+    }
+  }
+  modifiers {
+    type: MODIFIER_TYPE_ACCELERATION
+    rotation {
+      z: -0.0014510386
+      w: 0.9999989
+    }
+    properties {
+      key: MODIFIER_KEY_MAGNITUDE
+      points {
+        y: -100.0
+      }
     }
   }
   duration_spread: 0.05
